@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="logo3.png" alt="Products Image">
+        </div>
+        <div class="login-container">
+    <h2>Create an Account</h2>
+            <form>
+                <label for="name">Name*</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email*</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                
+                <label class="checkbox-container">
+                    Accept our Terms and Conditions
+                    <input type="checkbox" required>
+                    <span class="checkmark"></span>
+                </label>
+                
+                <button type="submit">Create Account</button>
+                <button type="button" class="google-login">
+                    <img src="google-icon.png" alt="Google Icon"> Login with Google
+                </button>
+            </form>
+            <p>Already a member? <a href="#">Login</a></p>
+        </div>
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId());
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+
+            var id_token = googleUser.getAuthResponse().id_token;
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'YOUR_BACKEND_URL');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify({token: id_token}));
+            xhr.onload = function() {
+                console.log('Signed in as: ' + xhr.responseText);
+            };
+        }
+
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+            });
+        }
+    </script>
+</body>
+</html>
