@@ -1,0 +1,296 @@
+body {
+    font-family: 'theseasons';
+    background-color: #fdfce9;
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: -5px -10px;
+    background-color: #FDFCE9;
+
+}
+
+.logo img {
+    width: 100px;
+    max-width: 150px;
+    margin-left: -5px;
+}
+
+nav {
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+    gap: 20px;
+    margin-left: 8%;
+    font-weight: lighter;
+}
+.nav-menu ul li a{
+    gap: 10px; 
+    font-size: 18px;
+    color: #000;
+    font-weight: lighter;
+    margin-right: 20px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    margin-right: 50px;
+    gap: -50px;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: lighter;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icons a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #f8f8f8;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+  }
+  
+  .hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+ .user-icon img {
+width: 20px;
+}
+.cart-icon img {
+    width: 20px;
+    color: #000;
+    }
+.search-container img{
+    width: 20px;
+    color: #000;
+
+}
+    .search-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 200px;
+        transition: width 0.3s ease;
+    }
+    
+    #search-bar {
+        width: 80%;
+        padding: 8px 12px;
+        border: 2px solid #fff;
+        border-radius: 25px;
+        background-color: transparent;
+        color: black;
+        transition: all 0.3s ease;
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    #search-button {
+        position: absolute;
+        right: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 18px;
+        color: #fff;
+        transition: color 0.3s ease;
+    }
+    
+    /* Expand search bar on hover */
+    .search-container:hover {
+        width: 300px;
+    }
+    
+    .search-container:hover #search-bar {
+        opacity: 1;
+        pointer-events: auto;
+        background-color: #fff;
+        color: #000;
+    }
+    
+    .search-container:hover #search-button {
+        color: #007BFF;
+    }
+.container {
+    display: flex;
+    height: 100vh;
+  
+}
+
+.left-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-section img {
+    width: 100%;
+    border-radius: 500%;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    border: 5px dashed #007bff; /* Add this line for dashed border */
+    border-radius: 10px;
+    max-width: max-content;
+    margin-right: 100px;
+}
+
+form {
+    width: 200%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.terms input {
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="button"] {
+    background-color: transparent;
+    border: 3px solid;
+    border-color: #007bff;
+    color:blue;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+p {
+    margin-top: 20px;
+    text-align: center;
+}
+
+p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
